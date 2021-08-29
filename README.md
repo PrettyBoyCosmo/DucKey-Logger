@@ -59,7 +59,7 @@ STRING shutdown /r
 ```
 4. flash Twin-Duck firmware on to your duck
     - [Tutorial](https://youtu.be/ao32BS8fwaM?t=700)
-5. load and deploy!!
+5. load, encode, and deploy!!
 
 ## Extraneous:
 The *c.cmd* attack opportunity
