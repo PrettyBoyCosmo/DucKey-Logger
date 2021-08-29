@@ -21,7 +21,7 @@ DucKey Logger is a USB RubberDucky payload that uses PowerShell to log keystroke
 - *p.ps1* will log keystrokes and email the logs every startup [via SMTP]
 
 ## Resources:
-- [YouTube Video]()
+- [YouTube Video](https://youtu.be/K0g0RHSUofw)
 - [YouTube Channel](https://youtube.com/cosmodiumcs)
 - [Website](https://cosmodiumcs.com)
 
