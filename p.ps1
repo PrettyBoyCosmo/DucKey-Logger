@@ -27,7 +27,7 @@ $TriggerTimes = @(
     '8:00:00pm',
     '9:00:00pm',
     '10:00:00pm',
-    '11:00:00pm',
+    '11:00:00pm'
 )
 
 # sort the times in chronological order
