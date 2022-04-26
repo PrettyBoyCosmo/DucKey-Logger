@@ -13,7 +13,7 @@
 ```
 
 ## Update:
-logs can now be sent every hour
+**An New Version of This Payload Is Available [HERE](https://github.com/CosmodiumCS/DucKeyhook)**
 
 ## Overview:
 ```
