@@ -13,7 +13,7 @@
 ```
 
 ## Update:
-**An New Version of This Payload Is Available [HERE](https://github.com/CosmodiumCS/payloads)**
+**An New Version of This Payload Is Available [HERE](https://github.com/CosmodiumCS/payloads/tree/main/rubberducky/DucKey-Logger)**
 
 ## Overview:
 ```
