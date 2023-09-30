@@ -13,7 +13,7 @@
 ```
 
 ## Update:
-**An New Version of This Payload Is Available [HERE](https://github.com/CosmodiumCS/DucKeyhook)**
+**An New Version of This Payload Is Available [HERE](https://github.com/CosmodiumCS/payloads)**
 
 ## Overview:
 ```
